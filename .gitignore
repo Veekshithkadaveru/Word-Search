@@ -1,0 +1,15 @@
+*.iml
+.gradle
+/local.properties
+/.idea/
+.kotlin/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+DEVELOPMENT_PLAN.md
+Jok_Ag4
+Jok_Ag4_elements
+

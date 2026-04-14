@@ -1,0 +1,1089 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Card Games",
+      "symbol": "jokag4_sym_1",
+      "background": "jokag4_back_1",
+      "accentColor": "#B71C1C",
+      "jokerIntro": "You think you know cards? Prove it.",
+      "jokerFound": [
+        "Found one. Impressive. For a beginner.",
+        "Beginner's luck. Don't get used to it.",
+        "A card found is a soul saved. Just kidding."
+      ],
+      "jokerMiss": [
+        "That is not a word. Or is it? No. It is not.",
+        "Blind as a bat, aren't we?",
+        "The deck is stacked against you."
+      ],
+      "jokerComplete": [
+        "Finally. I nearly fell asleep. Nearly.",
+        "Dealt a winning hand for once, eh?",
+        "The house always wins, eventually."
+      ],
+      "puzzles": [
+        {
+          "id": 1,
+          "words": [
+            "JOKER",
+            "TRUMP",
+            "SPADE",
+            "HEART",
+            "FLUSH",
+            "BLUFF",
+            "STACK",
+            "DEALT"
+          ]
+        },
+        {
+          "id": 2,
+          "words": [
+            "DIAMOND",
+            "CLUB",
+            "SHUFFLE",
+            "BRIDGE",
+            "POKER",
+            "CHIPS",
+            "ANTE",
+            "FOLD"
+          ]
+        },
+        {
+          "id": 3,
+          "words": [
+            "QUEEN",
+            "KING",
+            "JACK",
+            "ACES",
+            "DEUCE",
+            "SUITS",
+            "DEALER",
+            "HOUSE"
+          ]
+        },
+        {
+          "id": 4,
+          "words": [
+            "SOLITAIRE",
+            "BETTING",
+            "RAISE",
+            "CALL",
+            "CHECK",
+            "WAGER",
+            "REVEAL",
+            "GRIFT"
+          ]
+        },
+        {
+          "id": 5,
+          "words": [
+            "GAMBLE",
+            "CHANCE",
+            "ODDS",
+            "STRAIGHT",
+            "FULL",
+            "HOUSE",
+            "PAIR",
+            "TRIPS"
+          ]
+        },
+        {
+          "id": 6,
+          "words": [
+            "BACCARAT",
+            "RUMMY",
+            "WHIST",
+            "EUCHRE",
+            "CANASTA",
+            "BRIDGE",
+            "GIN",
+            "UNO"
+          ]
+        },
+        {
+          "id": 7,
+          "words": [
+            "CARD",
+            "DECK",
+            "PLAY",
+            "DRAW",
+            "HAND",
+            "TABLE",
+            "LIMIT",
+            "POT"
+          ]
+        },
+        {
+          "id": 8,
+          "words": [
+            "TRICK",
+            "LEAD",
+            "FOLLOW",
+            "VOID",
+            "TRUMP",
+            "PASS",
+            "BID",
+            "SLIP"
+          ]
+        },
+        {
+          "id": 9,
+          "words": [
+            "MARKER",
+            "TELL",
+            "SHARK",
+            "CHEAT",
+            "HONEST",
+            "SQUARE",
+            "DEAL",
+            "CUT"
+          ]
+        },
+        {
+          "id": 10,
+          "words": [
+            "ROYAL",
+            "FLUSH",
+            "WHEEL",
+            "INSIDE",
+            "STREET",
+            "TURN",
+            "RIVER",
+            "SHOW"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Carnival & Circus",
+      "symbol": "jokag4_sym_2",
+      "background": "jokag4_back_2",
+      "accentColor": "#FBC02D",
+      "jokerIntro": "Welcome to the show. Don't mind the screams.",
+      "jokerFound": [
+        "A prize for the little one!",
+        "Step right up and see the genius!",
+        "Found it? Even a clown gets it right sometimes."
+      ],
+      "jokerMiss": [
+        "Close, but no cigar.",
+        "The mirror maze has you confused.",
+        "A swing and a miss! Strike one!"
+      ],
+      "jokerComplete": [
+        "The show is over. Get out.",
+        "Applause for the survivor!",
+        "The curtain falls on your luck."
+      ],
+      "puzzles": [
+        {
+          "id": 1,
+          "words": [
+            "CLOWN",
+            "CIRCUS",
+            "TENT",
+            "SIDESHOW",
+            "TICKET",
+            "BARKER",
+            "RIDE",
+            "CANDY"
+          ]
+        },
+        {
+          "id": 2,
+          "words": [
+            "TRAPEZE",
+            "ACROBAT",
+            "JUGGLER",
+            "TIGHTROPE",
+            "ANIMAL",
+            "TAMER",
+            "RING",
+            "LEADER"
+          ]
+        },
+        {
+          "id": 3,
+          "words": [
+            "CARNIVAL",
+            "FERRIS",
+            "WHEEL",
+            "COASTER",
+            "MIDWAY",
+            "GAMES",
+            "DART",
+            "BALLOON"
+          ]
+        },
+        {
+          "id": 4,
+          "words": [
+            "MIRROR",
+            "MAZE",
+            "HAUNT",
+            "HOUSE",
+            "GHOST",
+            "TRAIN",
+            "CARNY",
+            "STAFF"
+          ]
+        },
+        {
+          "id": 5,
+          "words": [
+            "POPCORN",
+            "NACHOS",
+            "CHURRO",
+            "FUDGE",
+            "APPLE",
+            "SODA",
+            "DRINK",
+            "SNACK"
+          ]
+        },
+        {
+          "id": 6,
+          "words": [
+            "STRONG",
+            "MAN",
+            "BEARDED",
+            "LADY",
+            "GIANT",
+            "DWARF",
+            "FREAK",
+            "SHOW"
+          ]
+        },
+        {
+          "id": 7,
+          "words": [
+            "CANON",
+            "BALL",
+            "DIVE",
+            "FLIP",
+            "STUNT",
+            "DANGER",
+            "THRILL",
+            "SPILL"
+          ]
+        },
+        {
+          "id": 8,
+          "words": [
+            "BUMPER",
+            "CARS",
+            "SLIDE",
+            "SWING",
+            "WHIRL",
+            "TILT",
+            "SPIN",
+            "LOOP"
+          ]
+        },
+        {
+          "id": 9,
+          "words": [
+            "COSTUME",
+            "MAKEUP",
+            "WIG",
+            "NOSE",
+            "SHOES",
+            "PAINT",
+            "MASK",
+            "GRIN"
+          ]
+        },
+        {
+          "id": 10,
+          "words": [
+            "NIGHT",
+            "FAIR",
+            "LIGHTS",
+            "MUSIC",
+            "LAUGH",
+            "CRY",
+            "SCARE",
+            "FUN"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Magic & Illusion",
+      "symbol": "jokag4_sym_3",
+      "background": "jokag4_back_3",
+      "accentColor": "#7B1FA2",
+      "jokerIntro": "Now you see it... now you're gone.",
+      "jokerFound": [
+        "Presto! A word appears.",
+        "Smoke and mirrors, my friend.",
+        "Abracadabra! You found a grain of sense."
+      ],
+      "jokerMiss": [
+        "Misdirection at its finest.",
+        "The magic is fading.",
+        "Your trick failed. Miserably."
+      ],
+      "jokerComplete": [
+        "The grand finale was... underwhelming.",
+        "The secret remains safe from you.",
+        "Ta-da! You're still here. Boring."
+      ],
+      "puzzles": [
+        {
+          "id": 1,
+          "words": [
+            "MAGIC",
+            "WAND",
+            "HAT",
+            "RABBIT",
+            "SPELL",
+            "TRICK",
+            "CARD",
+            "COIN"
+          ]
+        },
+        {
+          "id": 2,
+          "words": [
+            "ILLUSION",
+            "ESCAPE",
+            "ARTIST",
+            "CHAINS",
+            "LOCKS",
+            "WATER",
+            "TANK",
+            "KEYS"
+          ]
+        },
+        {
+          "id": 3,
+          "words": [
+            "LEVITY",
+            "FLOAT",
+            "VANISH",
+            "APPEAR",
+            "SHADOW",
+            "LIGHT",
+            "STAGED",
+            "PROPS"
+          ]
+        },
+        {
+          "id": 4,
+          "words": [
+            "MENTAL",
+            "READ",
+            "MIND",
+            "THOUGHT",
+            "FOCUS",
+            "POWER",
+            "FORCE",
+            "WILL"
+          ]
+        },
+        {
+          "id": 5,
+          "words": [
+            "SLEIGHT",
+            "HAND",
+            "PALM",
+            "SHIFT",
+            "SLIDE",
+            "MOVE",
+            "FAST",
+            "SLOW"
+          ]
+        },
+        {
+          "id": 6,
+          "words": [
+            "SAWED",
+            "HALF",
+            "BOX",
+            "SWORD",
+            "CABINET",
+            "SECRET",
+            "PANEL",
+            "DOOR"
+          ]
+        },
+        {
+          "id": 7,
+          "words": [
+            "MYSTERY",
+            "ENIGMA",
+            "PUZZLE",
+            "SOLVE",
+            "HIDDEN",
+            "SIGHT",
+            "VIEW",
+            "LOOK"
+          ]
+        },
+        {
+          "id": 8,
+          "words": [
+            "CHARM",
+            "HEX",
+            "CURSE",
+            "BLESS",
+            "RITUAL",
+            "RUNE",
+            "SIGIL",
+            "SYMBOL"
+          ]
+        },
+        {
+          "id": 9,
+          "words": [
+            "MASTER",
+            "MAGE",
+            "WIZARD",
+            "WITCH",
+            "SORCERER",
+            "ORACLE",
+            "SEER",
+            "PROPHET"
+          ]
+        },
+        {
+          "id": 10,
+          "words": [
+            "DREAM",
+            "REAL",
+            "FAKE",
+            "TRUTH",
+            "LIE",
+            "BELIEVE",
+            "DOUBT",
+            "FAITH"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Dark & Sinister",
+      "symbol": "jokag4_sym_4",
+      "background": "jokag4_back_4",
+      "accentColor": "#212121",
+      "jokerIntro": "Shadows are much more fun than the sun.",
+      "jokerFound": [
+        "Found a little darkness, did we?",
+        "The shadows whisper your name.",
+        "A cold find for a cold heart."
+      ],
+      "jokerMiss": [
+        "Lost in the dark?",
+        "Fear is a great teacher.",
+        "The abyss stares back."
+      ],
+      "jokerComplete": [
+        "It only gets darker from here.",
+        "Death is the only certain end.",
+        "Nightmare over. For now."
+      ],
+      "puzzles": [
+        {
+          "id": 1,
+          "words": [
+            "DARK",
+            "SHADOW",
+            "NIGHT",
+            "GHOST",
+            "DEATH",
+            "FEAR",
+            "SCREAM",
+            "BLOOD"
+          ]
+        },
+        {
+          "id": 2,
+          "words": [
+            "POISON",
+            "DAGGER",
+            "SKULL",
+            "BONE",
+            "GRAVE",
+            "TOMB",
+            "CRYPT",
+            "COFFIN"
+          ]
+        },
+        {
+          "id": 3,
+          "words": [
+            "WICKED",
+            "EVIL",
+            "DEMON",
+            "DEVIL",
+            "HELL",
+            "FIRE",
+            "BRIM",
+            "STONE"
+          ]
+        },
+        {
+          "id": 4,
+          "words": [
+            "CRUEL",
+            "HARSH",
+            "PAIN",
+            "AGONY",
+            "TORTURE",
+            "RACK",
+            "IRON",
+            "MAID"
+          ]
+        },
+        {
+          "id": 5,
+          "words": [
+            "GRIM",
+            "REAPER",
+            "SOUL",
+            "SPIRIT",
+            "HAUNT",
+            "CURSE",
+            "DOOM",
+            "FATE"
+          ]
+        },
+        {
+          "id": 6,
+          "words": [
+            "SINISTER",
+            "OURE",
+            "BLACK",
+            "VOID",
+            "HOLE",
+            "EMPTY",
+            "NULL",
+            "ZERO"
+          ]
+        },
+        {
+          "id": 7,
+          "words": [
+            "KNIFE",
+            "BLADE",
+            "SHARP",
+            "CUT",
+            "STAB",
+            "KILL",
+            "MURDER",
+            "CRIME"
+          ]
+        },
+        {
+          "id": 8,
+          "words": [
+            "VENOM",
+            "SNAKE",
+            "SPIDER",
+            "WEB",
+            "TRAP",
+            "SNARE",
+            "PIT",
+            "FALL"
+          ]
+        },
+        {
+          "id": 9,
+          "words": [
+            "COLD",
+            "ICE",
+            "FROST",
+            "CHILL",
+            "SHIVER",
+            "SHAKE",
+            "TREMBLE",
+            "FEAR"
+          ]
+        },
+        {
+          "id": 10,
+          "words": [
+            "LAST",
+            "BREATH",
+            "END",
+            "FINISH",
+            "STOP",
+            "QUIT",
+            "DONE",
+            "GONE"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Theatre",
+      "symbol": "jokag4_sym_5",
+      "background": "jokag4_back_4",
+      "accentColor": "#6A1B9A",
+      "jokerIntro": "All the world's a stage, and you're the tragedy.",
+      "jokerFound": [
+        "A star is born. Briefly.",
+        "The crowd goes wild! In my head.",
+        "Bravo! A line discovered."
+      ],
+      "jokerMiss": [
+        "Forgot your lines?",
+        "Stage fright?",
+        "The director is not pleased."
+      ],
+      "jokerComplete": [
+        "Curtain call. No encore for you.",
+        "The play is done. Go home.",
+        "Exit, pursued by a bear."
+      ],
+      "puzzles": [
+        {
+          "id": 1,
+          "words": [
+            "STAGE",
+            "ACTOR",
+            "DRAMA",
+            "PLAY",
+            "SCENE",
+            "SCRIPT",
+            "ROLES",
+            "PARTS"
+          ]
+        },
+        {
+          "id": 2,
+          "words": [
+            "CURTAIN",
+            "LIGHTS",
+            "SOUND",
+            "MUSIC",
+            "DANCE",
+            "SONG",
+            "LYRIC",
+            "VOICE"
+          ]
+        },
+        {
+          "id": 3,
+          "words": [
+            "TRAGEDY",
+            "COMEDY",
+            "FARCE",
+            "SATIRE",
+            "POEM",
+            "VERSE",
+            "PROSE",
+            "TEXT"
+          ]
+        },
+        {
+          "id": 4,
+          "words": [
+            "MASK",
+            "GRIN",
+            "TEAR",
+            "SMILE",
+            "FROWN",
+            "FACE",
+            "LOOK",
+            "MOOD"
+          ]
+        },
+        {
+          "id": 5,
+          "words": [
+            "AUDIENCE",
+            "SEAT",
+            "ROW",
+            "AISLE",
+            "BOX",
+            "PIT",
+            "HOUSE",
+            "DOOR"
+          ]
+        },
+        {
+          "id": 6,
+          "words": [
+            "PROPS",
+            "SET",
+            "BACK",
+            "DROP",
+            "FLOOR",
+            "WALL",
+            "DOOR",
+            "KEY"
+          ]
+        },
+        {
+          "id": 7,
+          "words": [
+            "DIRECT",
+            "PRODUCE",
+            "WRITE",
+            "EDIT",
+            "CUT",
+            "FILM",
+            "TAPE",
+            "SHOW"
+          ]
+        },
+        {
+          "id": 8,
+          "words": [
+            "GREASE",
+            "PAINT",
+            "WIG",
+            "HAIR",
+            "DRESS",
+            "SUIT",
+            "CLOTH",
+            "WEAR"
+          ]
+        },
+        {
+          "id": 9,
+          "words": [
+            "HERO",
+            "VILLAIN",
+            "FOIL",
+            "LEAD",
+            "EXTRA",
+            "CROWD",
+            "MOB",
+            "GANG"
+          ]
+        },
+        {
+          "id": 10,
+          "words": [
+            "APPLAUSE",
+            "CHEER",
+            "BOO",
+            "HISS",
+            "CLAP",
+            "SHOUT",
+            "YELL",
+            "QUIET"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Luck & Chance",
+      "symbol": "jokag4_sym_6",
+      "background": "jokag4_back_5",
+      "accentColor": "#2E7D32",
+      "jokerIntro": "Roll the dice. Your soul is on the line.",
+      "jokerFound": [
+        "Feeling lucky, punk?",
+        "A stroke of luck. It won't last.",
+        "Winner winner, chicken dinner. Not really."
+      ],
+      "jokerMiss": [
+        "Snake eyes.",
+        "Luck has left the building.",
+        "Bust!"
+      ],
+      "jokerComplete": [
+        "The house took it all.",
+        "Better luck next life.",
+        "You survived the spin."
+      ],
+      "puzzles": [
+        {
+          "id": 1,
+          "words": [
+            "LUCK",
+            "CHANCE",
+            "RISK",
+            "DICE",
+            "ROLL",
+            "SPIN",
+            "WHEEL",
+            "WIN"
+          ]
+        },
+        {
+          "id": 2,
+          "words": [
+            "GAMBLE",
+            "BET",
+            "WAGER",
+            "STAKE",
+            "POT",
+            "CHIPS",
+            "GOLD",
+            "CASH"
+          ]
+        },
+        {
+          "id": 3,
+          "words": [
+            "FORTUNE",
+            "WEALTH",
+            "RICH",
+            "POOR",
+            "LOST",
+            "GAIN",
+            "PROFIT",
+            "DEBT"
+          ]
+        },
+        {
+          "id": 4,
+          "words": [
+            "COIN",
+            "FLIP",
+            "HEADS",
+            "TAILS",
+            "EDGE",
+            "SIDE",
+            "FLAT",
+            "ROUND"
+          ]
+        },
+        {
+          "id": 5,
+          "words": [
+            "LOTTO",
+            "PRIZE",
+            "DRAW",
+            "TICKET",
+            "NUMBER",
+            "PICK",
+            "CHOOSE",
+            "SELECT"
+          ]
+        },
+        {
+          "id": 6,
+          "words": [
+            "HORSES",
+            "RACE",
+            "TRACK",
+            "BET",
+            "RUN",
+            "FAST",
+            "SLOW",
+            "LAST"
+          ]
+        },
+        {
+          "id": 7,
+          "words": [
+            "SLOT",
+            "PULL",
+            "BAR",
+            "BELL",
+            "FRUIT",
+            "CHERRY",
+            "LEMON",
+            "LIME"
+          ]
+        },
+        {
+          "id": 8,
+          "words": [
+            "BINGO",
+            "BALL",
+            "DAUB",
+            "CALL",
+            "LINE",
+            "FULL",
+            "MARK",
+            "WINNER"
+          ]
+        },
+        {
+          "id": 9,
+          "words": [
+            "RAFFLE",
+            "SWEEP",
+            "STAKE",
+            "ENTRY",
+            "FORM",
+            "NAME",
+            "LIST",
+            "WIN"
+          ]
+        },
+        {
+          "id": 10,
+          "words": [
+            "FUTURE",
+            "FATE",
+            "DESTINY",
+            "KARMA",
+            "DOOM",
+            "LUCK",
+            "HOPE",
+            "WISH"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Royalty",
+      "symbol": "jokag4_sym_7",
+      "background": "jokag4_back_5",
+      "accentColor": "#FFD600",
+      "jokerIntro": "Bow down before the king of fools.",
+      "jokerFound": [
+        "A royal discovery.",
+        "Your majesty is pleased.",
+        "Found a jewel in the rough."
+      ],
+      "jokerMiss": [
+        "Off with their head!",
+        "Treason!",
+        "Peasant behavior."
+      ],
+      "jokerComplete": [
+        "Long live the king. Which is me.",
+        "Your reign is over.",
+        "The crown fits... me better."
+      ],
+      "puzzles": [
+        {
+          "id": 1,
+          "words": [
+            "KING",
+            "QUEEN",
+            "PRINCE",
+            "CROWN",
+            "THRONE",
+            "ROBE",
+            "GOLD",
+            "JEWEL"
+          ]
+        },
+        {
+          "id": 2,
+          "words": [
+            "PALACE",
+            "CASTLE",
+            "COURT",
+            "KNIGHT",
+            "GUARD",
+            "SWORD",
+            "SHIELD",
+            "ARMOR"
+          ]
+        },
+        {
+          "id": 3,
+          "words": [
+            "EMPIRE",
+            "KINGDOM",
+            "REALM",
+            "LAND",
+            "RULE",
+            "LAW",
+            "REIGN",
+            "POWER"
+          ]
+        },
+        {
+          "id": 4,
+          "words": [
+            "NOBLE",
+            "DUKE",
+            "EARL",
+            "BARON",
+            "LORD",
+            "LADY",
+            "PEER",
+            "RANK"
+          ]
+        },
+        {
+          "id": 5,
+          "words": [
+            "SCEPTER",
+            "ORB",
+            "RING",
+            "SEAL",
+            "STAMP",
+            "SIGN",
+            "MARK",
+            "NAME"
+          ]
+        },
+        {
+          "id": 6,
+          "words": [
+            "FEAST",
+            "DINNER",
+            "WINE",
+            "FOOD",
+            "MEAT",
+            "BREAD",
+            "FRUIT",
+            "CAKE"
+          ]
+        },
+        {
+          "id": 7,
+          "words": [
+            "JESTER",
+            "FOOL",
+            "WIT",
+            "JOKE",
+            "LAUGH",
+            "FUN",
+            "PLAY",
+            "GAME"
+          ]
+        },
+        {
+          "id": 8,
+          "words": [
+            "HUNT",
+            "STAG",
+            "BOAR",
+            "HORSE",
+            "DOG",
+            "WOODS",
+            "TREE",
+            "LEAF"
+          ]
+        },
+        {
+          "id": 9,
+          "words": [
+            "WAR",
+            "BATTLE",
+            "FIGHT",
+            "WIN",
+            "LOSS",
+            "GLORY",
+            "PRIDE",
+            "HONOR"
+          ]
+        },
+        {
+          "id": 10,
+          "words": [
+            "LEGEND",
+            "MYTH",
+            "STORY",
+            "TALE",
+            "SONG",
+            "BARD",
+            "HERO",
+            "KING"
+          ]
+        }
+      ]
+    }
+  ]
+}
