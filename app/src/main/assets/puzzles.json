@@ -22,6 +22,11 @@
         "Dealt a winning hand for once, eh?",
         "The house always wins, eventually."
       ],
+      "jokerTimerWarning": [
+        "Clock's ticking. Fold now if you're scared.",
+        "The last seconds are slipping through your fingers.",
+        "Beat the clock, or let it bury you."
+      ],
       "puzzles": [
         {
           "id": 1,
@@ -176,6 +181,11 @@
         "The show is over. Get out.",
         "Applause for the survivor!",
         "The curtain falls on your luck."
+      ],
+      "jokerTimerWarning": [
+        "Hurry up. The crowd is getting restless.",
+        "The tent is closing, darling.",
+        "Last call before the spotlight burns out."
       ],
       "puzzles": [
         {
@@ -332,6 +342,11 @@
         "The secret remains safe from you.",
         "Ta-da! You're still here. Boring."
       ],
+      "jokerTimerWarning": [
+        "The trick dies if you take too long.",
+        "Even illusions have a deadline.",
+        "Tick tock. Make the magic happen."
+      ],
       "puzzles": [
         {
           "id": 1,
@@ -486,6 +501,11 @@
         "It only gets darker from here.",
         "Death is the only certain end.",
         "Nightmare over. For now."
+      ],
+      "jokerTimerWarning": [
+        "Time is running out, and so are you.",
+        "The dark is closing in faster now.",
+        "Move, unless you'd like to stay buried here."
       ],
       "puzzles": [
         {
@@ -642,6 +662,11 @@
         "The play is done. Go home.",
         "Exit, pursued by a bear."
       ],
+      "jokerTimerWarning": [
+        "We're running long. Cut to the ending.",
+        "The audience is losing patience.",
+        "Pick up the pace before the curtain drops."
+      ],
       "puzzles": [
         {
           "id": 1,
@@ -797,6 +822,11 @@
         "Better luck next life.",
         "You survived the spin."
       ],
+      "jokerTimerWarning": [
+        "Final roll. Don't waste it.",
+        "The odds are shrinking by the second.",
+        "Luck hates slow players."
+      ],
       "puzzles": [
         {
           "id": 1,
@@ -951,6 +981,11 @@
         "Long live the king. Which is me.",
         "Your reign is over.",
         "The crown fits... me better."
+      ],
+      "jokerTimerWarning": [
+        "Your time at court is nearly over.",
+        "Move quickly, or lose your head.",
+        "The hourglass bows to no one."
       ],
       "puzzles": [
         {
