@@ -25,6 +25,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import app.krafted.wordsearch.data.PuzzleRepository
 import app.krafted.wordsearch.data.db.AppDatabase
+import app.krafted.wordsearch.ui.CompleteScreen
 import app.krafted.wordsearch.ui.GameScreen
 import app.krafted.wordsearch.ui.theme.WordSearchTheme
 
@@ -127,11 +128,29 @@ fun WordSearchNavHost() {
                 navArgument("isNewBest") { type = NavType.BoolType }
             )
         ) { backStackEntry ->
-            PlaceholderScreen("Complete Screen") {
-                navController.navigate("home") {
-                    popUpTo("home") { inclusive = true }
+            val categoryId = backStackEntry.arguments?.getInt("categoryId") ?: 1
+            val puzzleNumber = backStackEntry.arguments?.getInt("puzzleNumber") ?: 1
+            val score = backStackEntry.arguments?.getInt("score") ?: 0
+            val time = backStackEntry.arguments?.getInt("time") ?: 0
+            val isNewBest = backStackEntry.arguments?.getBoolean("isNewBest") ?: false
+            CompleteScreen(
+                categoryId = categoryId,
+                puzzleNumber = puzzleNumber,
+                score = score,
+                timeSeconds = time,
+                isNewBest = isNewBest,
+                repository = repository,
+                onNextPuzzle = {
+                    navController.navigate("mode_select/$categoryId/${puzzleNumber + 1}") {
+                        popUpTo("home")
+                    }
+                },
+                onHome = {
+                    navController.navigate("home") {
+                        popUpTo("home") { inclusive = true }
+                    }
                 }
-            }
+            )
         }
         composable("leaderboard") {
             PlaceholderScreen("Leaderboard") {
