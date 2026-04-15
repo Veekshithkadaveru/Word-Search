@@ -7,6 +7,7 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import app.krafted.wordsearch.data.PuzzleRepository
 import app.krafted.wordsearch.data.db.PuzzleDao
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -57,7 +58,7 @@ class HomeViewModel(
     val puzzleSelectUiState: StateFlow<PuzzleSelectUiState> = _puzzleSelectUiState.asStateFlow()
 
     fun loadHome() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val categories = repository.getAllCategories().map { category ->
                 var completed = 0
                 category.puzzles.forEach { puzzle ->

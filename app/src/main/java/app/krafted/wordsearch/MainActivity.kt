@@ -14,13 +14,18 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import app.krafted.wordsearch.data.PuzzleRepository
+import app.krafted.wordsearch.data.db.AppDatabase
+import app.krafted.wordsearch.ui.GameScreen
 import app.krafted.wordsearch.ui.theme.WordSearchTheme
 
 class MainActivity : ComponentActivity() {
@@ -43,6 +48,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun WordSearchNavHost() {
     val navController = rememberNavController()
+    val context = LocalContext.current
+    val repository = remember { PuzzleRepository(context) }
+    val dao = remember { AppDatabase.getInstance(context).puzzleDao() }
     NavHost(
         navController = navController,
         startDestination = "splash",
@@ -94,9 +102,20 @@ fun WordSearchNavHost() {
             val categoryId = backStackEntry.arguments?.getInt("categoryId") ?: 1
             val puzzleNumber = backStackEntry.arguments?.getInt("puzzleNumber") ?: 1
             val isTimed = backStackEntry.arguments?.getBoolean("isTimed") ?: true
-            PlaceholderScreen("Game Screen $categoryId - $puzzleNumber (Timed: $isTimed)") {
-                navController.navigate("complete/$categoryId/$puzzleNumber/3000/120/true")
-            }
+            GameScreen(
+                categoryId = categoryId,
+                puzzleNumber = puzzleNumber,
+                isTimedMode = isTimed,
+                repository = repository,
+                dao = dao,
+                onComplete = { score, time, isNewBest ->
+                    navController.navigate(
+                        "complete/$categoryId/$puzzleNumber/$score/$time/$isNewBest"
+                    ) {
+                        popUpTo("game/$categoryId/$puzzleNumber/$isTimed") { inclusive = true }
+                    }
+                }
+            )
         }
         composable(
             route = "complete/{categoryId}/{puzzleNumber}/{score}/{time}/{isNewBest}",
