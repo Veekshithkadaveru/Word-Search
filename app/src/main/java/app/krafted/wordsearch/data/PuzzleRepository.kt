@@ -48,6 +48,8 @@ class PuzzleRepository(
         }
     }
 
+    fun getAllCategories(): List<PuzzleCategory> = catalog.categories
+
     fun getCategory(id: Int): PuzzleCategory? =
         catalog.categories.firstOrNull { it.id == id }
 
