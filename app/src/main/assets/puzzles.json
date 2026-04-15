@@ -6,26 +6,26 @@
       "symbol": "jokag4_sym_1",
       "background": "jokag4_back_1",
       "accentColor": "#B71C1C",
-      "jokerIntro": "You think you know cards? Prove it.",
+      "jokerIntro": "Welcome to the card table! Let's have some fun.",
       "jokerFound": [
-        "Found one. Impressive. For a beginner.",
-        "Beginner's luck. Don't get used to it.",
-        "A card found is a soul saved. Just kidding."
+        "Great job!",
+        "You found one!",
+        "Keep it up!"
       ],
       "jokerMiss": [
-        "That is not a word. Or is it? No. It is not.",
-        "Blind as a bat, aren't we?",
-        "The deck is stacked against you."
+        "Not quite, try again!",
+        "Keep looking, you'll find it.",
+        "Oops, that's not a word."
       ],
       "jokerComplete": [
-        "Finally. I nearly fell asleep. Nearly.",
-        "Dealt a winning hand for once, eh?",
-        "The house always wins, eventually."
+        "Amazing work!",
+        "You cleared the board!",
+        "Winner!"
       ],
       "jokerTimerWarning": [
-        "Clock's ticking. Fold now if you're scared.",
-        "The last seconds are slipping through your fingers.",
-        "Beat the clock, or let it bury you."
+        "Time is running out, you can do it!",
+        "Almost out of time!",
+        "Hurry, find the last words!"
       ],
       "puzzles": [
         {
@@ -166,26 +166,26 @@
       "symbol": "jokag4_sym_2",
       "background": "jokag4_back_2",
       "accentColor": "#FBC02D",
-      "jokerIntro": "Welcome to the show. Don't mind the screams.",
+      "jokerIntro": "Step right up to the fun fair!",
       "jokerFound": [
-        "A prize for the little one!",
-        "Step right up and see the genius!",
-        "Found it? Even a clown gets it right sometimes."
+        "Awesome find!",
+        "Spot on!",
+        "You're a star!"
       ],
       "jokerMiss": [
-        "Close, but no cigar.",
-        "The mirror maze has you confused.",
-        "A swing and a miss! Strike one!"
+        "Try another spot!",
+        "Keep searching the midway.",
+        "Not there, but keep trying!"
       ],
       "jokerComplete": [
-        "The show is over. Get out.",
-        "Applause for the survivor!",
-        "The curtain falls on your luck."
+        "What a spectacular finish!",
+        "You won the grand prize!",
+        "Bravo!"
       ],
       "jokerTimerWarning": [
-        "Hurry up. The crowd is getting restless.",
-        "The tent is closing, darling.",
-        "Last call before the spotlight burns out."
+        "The show's almost over, hurry!",
+        "Quick, find the rest!",
+        "Clock is ticking, have fun!"
       ],
       "puzzles": [
         {
@@ -322,480 +322,480 @@
     },
     {
       "id": 3,
-      "name": "Magic & Illusion",
+      "name": "Nature & Wildlife",
       "symbol": "jokag4_sym_3",
       "background": "jokag4_back_3",
       "accentColor": "#7B1FA2",
-      "jokerIntro": "Now you see it... now you're gone.",
+      "jokerIntro": "Let's explore the great outdoors!",
       "jokerFound": [
-        "Presto! A word appears.",
-        "Smoke and mirrors, my friend.",
-        "Abracadabra! You found a grain of sense."
+        "Wonderful find!",
+        "Nature reveals its secrets!",
+        "Great spotting!"
       ],
       "jokerMiss": [
-        "Misdirection at its finest.",
-        "The magic is fading.",
-        "Your trick failed. Miserably."
+        "Keep exploring!",
+        "Look closer at the scenery.",
+        "Not quite, but keep at it!"
       ],
       "jokerComplete": [
-        "The grand finale was... underwhelming.",
-        "The secret remains safe from you.",
-        "Ta-da! You're still here. Boring."
+        "You're a true explorer!",
+        "A breath of fresh air, great job!",
+        "All words found!"
       ],
       "jokerTimerWarning": [
-        "The trick dies if you take too long.",
-        "Even illusions have a deadline.",
-        "Tick tock. Make the magic happen."
+        "The sun is setting, hurry up!",
+        "Just a little time left!",
+        "Quick, before the day ends!"
       ],
       "puzzles": [
         {
           "id": 1,
           "words": [
-            "MAGIC",
-            "WAND",
-            "HAT",
-            "RABBIT",
-            "SPELL",
-            "TRICK",
-            "CARD",
-            "COIN"
+            "FOREST",
+            "JUNGLE",
+            "RIVER",
+            "OCEAN",
+            "MOUNTAIN",
+            "VALLEY",
+            "DESERT",
+            "TUNDRA"
           ]
         },
         {
           "id": 2,
           "words": [
-            "ILLUSION",
-            "ESCAPE",
-            "ARTIST",
-            "CHAINS",
-            "LOCKS",
-            "WATER",
-            "TANK",
-            "KEYS"
+            "TIGER",
+            "LION",
+            "BEAR",
+            "WOLF",
+            "FOX",
+            "EAGLE",
+            "HAWK",
+            "DEER"
           ]
         },
         {
           "id": 3,
           "words": [
-            "LEVITY",
-            "FLOAT",
-            "VANISH",
-            "APPEAR",
-            "SHADOW",
-            "LIGHT",
-            "STAGED",
-            "PROPS"
+            "TREE",
+            "BUSH",
+            "FLOWER",
+            "GRASS",
+            "LEAF",
+            "BRANCH",
+            "ROOT",
+            "STEM"
           ]
         },
         {
           "id": 4,
           "words": [
-            "MENTAL",
-            "READ",
-            "MIND",
-            "THOUGHT",
-            "FOCUS",
-            "POWER",
-            "FORCE",
-            "WILL"
+            "BIRD",
+            "FISH",
+            "FROG",
+            "SNAKE",
+            "LIZARD",
+            "TURTLE",
+            "TOAD",
+            "NEWT"
           ]
         },
         {
           "id": 5,
           "words": [
-            "SLEIGHT",
-            "HAND",
-            "PALM",
-            "SHIFT",
-            "SLIDE",
-            "MOVE",
-            "FAST",
-            "SLOW"
+            "SPRING",
+            "SUMMER",
+            "AUTUMN",
+            "WINTER",
+            "RAIN",
+            "SNOW",
+            "WIND",
+            "STORM"
           ]
         },
         {
           "id": 6,
           "words": [
-            "SAWED",
-            "HALF",
-            "BOX",
-            "SWORD",
-            "CABINET",
-            "SECRET",
-            "PANEL",
-            "DOOR"
+            "ROCKS",
+            "STONE",
+            "PEBBLE",
+            "SAND",
+            "SOIL",
+            "DIRT",
+            "CLAY",
+            "MUD"
           ]
         },
         {
           "id": 7,
           "words": [
-            "MYSTERY",
-            "ENIGMA",
-            "PUZZLE",
-            "SOLVE",
-            "HIDDEN",
-            "SIGHT",
-            "VIEW",
-            "LOOK"
+            "SUN",
+            "MOON",
+            "STAR",
+            "SKY",
+            "CLOUD",
+            "BREEZE",
+            "STORM",
+            "RAINBOW"
           ]
         },
         {
           "id": 8,
           "words": [
-            "CHARM",
-            "HEX",
-            "CURSE",
-            "BLESS",
-            "RITUAL",
-            "RUNE",
-            "SIGIL",
-            "SYMBOL"
+            "PINE",
+            "OAK",
+            "MAPLE",
+            "BIRCH",
+            "WILLOW",
+            "CEDAR",
+            "FIR",
+            "ELM"
           ]
         },
         {
           "id": 9,
           "words": [
-            "MASTER",
-            "MAGE",
-            "WIZARD",
-            "WITCH",
-            "SORCERER",
-            "ORACLE",
-            "SEER",
-            "PROPHET"
+            "BEACH",
+            "COAST",
+            "SHORE",
+            "WAVE",
+            "TIDE",
+            "CORAL",
+            "REEF",
+            "SHELL"
           ]
         },
         {
           "id": 10,
           "words": [
-            "DREAM",
-            "REAL",
-            "FAKE",
-            "TRUTH",
-            "LIE",
-            "BELIEVE",
-            "DOUBT",
-            "FAITH"
+            "INSECT",
+            "SPIDER",
+            "ANT",
+            "BEE",
+            "WASP",
+            "FLY",
+            "BUG",
+            "MOTH"
           ]
         }
       ]
     },
     {
       "id": 4,
-      "name": "Dark & Sinister",
+      "name": "Space Exploration",
       "symbol": "jokag4_sym_4",
       "background": "jokag4_back_4",
       "accentColor": "#212121",
-      "jokerIntro": "Shadows are much more fun than the sun.",
+      "jokerIntro": "Ready for blastoff! Let's explore the stars.",
       "jokerFound": [
-        "Found a little darkness, did we?",
-        "The shadows whisper your name.",
-        "A cold find for a cold heart."
+        "Stellar find!",
+        "Out of this world!",
+        "You're a shooting star!"
       ],
       "jokerMiss": [
-        "Lost in the dark?",
-        "Fear is a great teacher.",
-        "The abyss stares back."
+        "Lost in space? Try again!",
+        "Keep scanning the cosmos.",
+        "Not a match, keep looking!"
       ],
       "jokerComplete": [
-        "It only gets darker from here.",
-        "Death is the only certain end.",
-        "Nightmare over. For now."
+        "Mission accomplished!",
+        "You conquered the galaxy!",
+        "Excellent work, astronaut!"
       ],
       "jokerTimerWarning": [
-        "Time is running out, and so are you.",
-        "The dark is closing in faster now.",
-        "Move, unless you'd like to stay buried here."
+        "Countdown is almost over!",
+        "Hurry, reaching zero!",
+        "Quick, secure the final words!"
       ],
       "puzzles": [
         {
           "id": 1,
           "words": [
-            "DARK",
-            "SHADOW",
-            "NIGHT",
-            "GHOST",
-            "DEATH",
-            "FEAR",
-            "SCREAM",
-            "BLOOD"
+            "PLANET",
+            "STAR",
+            "GALAXY",
+            "NEBULA",
+            "COMET",
+            "METEOR",
+            "ASTEROID",
+            "ORBIT"
           ]
         },
         {
           "id": 2,
           "words": [
-            "POISON",
-            "DAGGER",
-            "SKULL",
-            "BONE",
-            "GRAVE",
-            "TOMB",
-            "CRYPT",
-            "COFFIN"
+            "EARTH",
+            "MARS",
+            "VENUS",
+            "JUPITER",
+            "SATURN",
+            "URANUS",
+            "NEPTUNE",
+            "PLUTO"
           ]
         },
         {
           "id": 3,
           "words": [
-            "WICKED",
-            "EVIL",
-            "DEMON",
-            "DEVIL",
-            "HELL",
-            "FIRE",
-            "BRIM",
-            "STONE"
+            "ROCKET",
+            "SHUTTLE",
+            "STATION",
+            "PROBE",
+            "ROVER",
+            "LANDER",
+            "CAPSULE",
+            "MODULE"
           ]
         },
         {
           "id": 4,
           "words": [
-            "CRUEL",
-            "HARSH",
-            "PAIN",
-            "AGONY",
-            "TORTURE",
-            "RACK",
-            "IRON",
-            "MAID"
+            "ASTRONAUT",
+            "COSMONAUT",
+            "PILOT",
+            "COMMANDER",
+            "ENGINEER",
+            "CREW",
+            "TEAM",
+            "BASE"
           ]
         },
         {
           "id": 5,
           "words": [
-            "GRIM",
-            "REAPER",
-            "SOUL",
-            "SPIRIT",
-            "HAUNT",
-            "CURSE",
-            "DOOM",
-            "FATE"
+            "SUN",
+            "MOON",
+            "LUNAR",
+            "SOLAR",
+            "ECLIPSE",
+            "CRATER",
+            "DUST",
+            "ROCK"
           ]
         },
         {
           "id": 6,
           "words": [
-            "SINISTER",
-            "OURE",
-            "BLACK",
-            "VOID",
-            "HOLE",
-            "EMPTY",
-            "NULL",
-            "ZERO"
+            "GRAVITY",
+            "VACUUM",
+            "LIGHT",
+            "SPEED",
+            "SPACE",
+            "TIME",
+            "WARP",
+            "JUMP"
           ]
         },
         {
           "id": 7,
           "words": [
-            "KNIFE",
-            "BLADE",
-            "SHARP",
-            "CUT",
-            "STAB",
-            "KILL",
-            "MURDER",
-            "CRIME"
+            "TELESCOPE",
+            "LENS",
+            "MIRROR",
+            "RADAR",
+            "RADIO",
+            "SIGNAL",
+            "BEAM",
+            "DATA"
           ]
         },
         {
           "id": 8,
           "words": [
-            "VENOM",
-            "SNAKE",
-            "SPIDER",
-            "WEB",
-            "TRAP",
-            "SNARE",
-            "PIT",
-            "FALL"
+            "APOLLO",
+            "GEMINI",
+            "MERCURY",
+            "VOYAGER",
+            "PIONEER",
+            "HUBBLE",
+            "WEBB",
+            "SPUTNIK"
           ]
         },
         {
           "id": 9,
           "words": [
-            "COLD",
-            "ICE",
-            "FROST",
-            "CHILL",
-            "SHIVER",
-            "SHAKE",
-            "TREMBLE",
-            "FEAR"
+            "MILKY",
+            "WAY",
+            "ANDROMEDA",
+            "ORION",
+            "CYGNUS",
+            "LYRA",
+            "DRACO",
+            "PEGASUS"
           ]
         },
         {
           "id": 10,
           "words": [
-            "LAST",
-            "BREATH",
-            "END",
-            "FINISH",
-            "STOP",
-            "QUIT",
-            "DONE",
-            "GONE"
+            "ALIEN",
+            "UFO",
+            "SAUCER",
+            "MARTIAN",
+            "LIFE",
+            "FORM",
+            "SHIP",
+            "CRAFT"
           ]
         }
       ]
     },
     {
       "id": 5,
-      "name": "Theatre",
+      "name": "Travel & Places",
       "symbol": "jokag4_sym_5",
       "background": "jokag4_back_4",
       "accentColor": "#6A1B9A",
-      "jokerIntro": "All the world's a stage, and you're the tragedy.",
+      "jokerIntro": "Pack your bags, let's go on an adventure!",
       "jokerFound": [
-        "A star is born. Briefly.",
-        "The crowd goes wild! In my head.",
-        "Bravo! A line discovered."
+        "Nice discovery!",
+        "Another destination reached!",
+        "Great traveling!"
       ],
       "jokerMiss": [
-        "Forgot your lines?",
-        "Stage fright?",
-        "The director is not pleased."
+        "Detour! Try another path.",
+        "Keep wandering, you'll find it.",
+        "Not on the map, try again!"
       ],
       "jokerComplete": [
-        "Curtain call. No encore for you.",
-        "The play is done. Go home.",
-        "Exit, pursued by a bear."
+        "Journey complete!",
+        "What an amazing trip!",
+        "You've seen it all!"
       ],
       "jokerTimerWarning": [
-        "We're running long. Cut to the ending.",
-        "The audience is losing patience.",
-        "Pick up the pace before the curtain drops."
+        "Flight is departing soon, hurry!",
+        "Last call for boarding!",
+        "Quick, finish your trip!"
       ],
       "puzzles": [
         {
           "id": 1,
           "words": [
-            "STAGE",
-            "ACTOR",
-            "DRAMA",
-            "PLAY",
-            "SCENE",
-            "SCRIPT",
-            "ROLES",
-            "PARTS"
+            "TRAIN",
+            "PLANE",
+            "BOAT",
+            "CAR",
+            "BUS",
+            "BIKE",
+            "WALK",
+            "HIKE"
           ]
         },
         {
           "id": 2,
           "words": [
-            "CURTAIN",
-            "LIGHTS",
-            "SOUND",
-            "MUSIC",
-            "DANCE",
-            "SONG",
-            "LYRIC",
-            "VOICE"
+            "PARIS",
+            "LONDON",
+            "ROME",
+            "TOKYO",
+            "BERLIN",
+            "MADRID",
+            "ATHENS",
+            "DUBAI"
           ]
         },
         {
           "id": 3,
           "words": [
-            "TRAGEDY",
-            "COMEDY",
-            "FARCE",
-            "SATIRE",
-            "POEM",
-            "VERSE",
-            "PROSE",
-            "TEXT"
+            "HOTEL",
+            "MOTEL",
+            "HOSTEL",
+            "RESORT",
+            "CAMP",
+            "TENT",
+            "CABIN",
+            "LODGE"
           ]
         },
         {
           "id": 4,
           "words": [
-            "MASK",
-            "GRIN",
-            "TEAR",
-            "SMILE",
-            "FROWN",
-            "FACE",
-            "LOOK",
-            "MOOD"
+            "PASSPORT",
+            "VISA",
+            "TICKET",
+            "MAP",
+            "GUIDE",
+            "TOUR",
+            "TRIP",
+            "JOURNEY"
           ]
         },
         {
           "id": 5,
           "words": [
-            "AUDIENCE",
-            "SEAT",
-            "ROW",
-            "AISLE",
-            "BOX",
-            "PIT",
-            "HOUSE",
-            "DOOR"
+            "BEACH",
+            "CITY",
+            "TOWN",
+            "VILLAGE",
+            "ISLAND",
+            "MOUNTAIN",
+            "LAKE",
+            "RIVER"
           ]
         },
         {
           "id": 6,
           "words": [
-            "PROPS",
-            "SET",
-            "BACK",
-            "DROP",
-            "FLOOR",
-            "WALL",
-            "DOOR",
-            "KEY"
+            "SUITCASE",
+            "LUGGAGE",
+            "BAG",
+            "PACK",
+            "TRUNK",
+            "CASE",
+            "PURSE",
+            "WALLET"
           ]
         },
         {
           "id": 7,
           "words": [
-            "DIRECT",
-            "PRODUCE",
-            "WRITE",
-            "EDIT",
-            "CUT",
-            "FILM",
-            "TAPE",
-            "SHOW"
+            "MUSEUM",
+            "PARK",
+            "ZOO",
+            "GARDEN",
+            "PALACE",
+            "CASTLE",
+            "TEMPLE",
+            "SHRINE"
           ]
         },
         {
           "id": 8,
           "words": [
-            "GREASE",
-            "PAINT",
-            "WIG",
-            "HAIR",
-            "DRESS",
-            "SUIT",
-            "CLOTH",
-            "WEAR"
+            "FOOD",
+            "DRINK",
+            "MEAL",
+            "SNACK",
+            "WATER",
+            "WINE",
+            "BEER",
+            "COFFEE"
           ]
         },
         {
           "id": 9,
           "words": [
-            "HERO",
-            "VILLAIN",
-            "FOIL",
-            "LEAD",
-            "EXTRA",
-            "CROWD",
-            "MOB",
-            "GANG"
+            "PHOTO",
+            "CAMERA",
+            "VIDEO",
+            "FILM",
+            "SNAP",
+            "SHOT",
+            "LENS",
+            "FLASH"
           ]
         },
         {
           "id": 10,
           "words": [
-            "APPLAUSE",
-            "CHEER",
-            "BOO",
-            "HISS",
-            "CLAP",
-            "SHOUT",
-            "YELL",
-            "QUIET"
+            "FLY",
+            "SAIL",
+            "DRIVE",
+            "RIDE",
+            "CRUISE",
+            "TOUR",
+            "WALK",
+            "TREK"
           ]
         }
       ]
@@ -806,26 +806,26 @@
       "symbol": "jokag4_sym_6",
       "background": "jokag4_back_5",
       "accentColor": "#2E7D32",
-      "jokerIntro": "Roll the dice. Your soul is on the line.",
+      "jokerIntro": "Let's see if luck is on your side today!",
       "jokerFound": [
-        "Feeling lucky, punk?",
-        "A stroke of luck. It won't last.",
-        "Winner winner, chicken dinner. Not really."
+        "Lucky find!",
+        "You're on a roll!",
+        "Bingo!"
       ],
       "jokerMiss": [
-        "Snake eyes.",
-        "Luck has left the building.",
-        "Bust!"
+        "Spin again!",
+        "Not quite, keep trying your luck.",
+        "Close, but no match."
       ],
       "jokerComplete": [
-        "The house took it all.",
-        "Better luck next life.",
-        "You survived the spin."
+        "Jackpot!",
+        "You beat the odds!",
+        "What a lucky streak!"
       ],
       "jokerTimerWarning": [
-        "Final roll. Don't waste it.",
-        "The odds are shrinking by the second.",
-        "Luck hates slow players."
+        "Time's almost up, good luck!",
+        "Make your final moves!",
+        "Hurry, the clock is ticking!"
       ],
       "puzzles": [
         {
@@ -966,26 +966,26 @@
       "symbol": "jokag4_sym_7",
       "background": "jokag4_back_5",
       "accentColor": "#FFD600",
-      "jokerIntro": "Bow down before the king of fools.",
+      "jokerIntro": "Welcome, your majesty! Let the games begin.",
       "jokerFound": [
-        "A royal discovery.",
-        "Your majesty is pleased.",
-        "Found a jewel in the rough."
+        "A royal success!",
+        "Splendid!",
+        "Magnificent find!"
       ],
       "jokerMiss": [
-        "Off with their head!",
-        "Treason!",
-        "Peasant behavior."
+        "Not quite, my liege.",
+        "Try again, your highness.",
+        "Keep searching the kingdom."
       ],
       "jokerComplete": [
-        "Long live the king. Which is me.",
-        "Your reign is over.",
-        "The crown fits... me better."
+        "A triumphant victory!",
+        "Long live the champion!",
+        "A royal performance!"
       ],
       "jokerTimerWarning": [
-        "Your time at court is nearly over.",
-        "Move quickly, or lose your head.",
-        "The hourglass bows to no one."
+        "The royal clock is ticking!",
+        "Hurry, your majesty!",
+        "Time is of the essence!"
       ],
       "puzzles": [
         {

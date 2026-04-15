@@ -18,6 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -27,7 +28,10 @@ import app.krafted.wordsearch.data.PuzzleRepository
 import app.krafted.wordsearch.data.db.AppDatabase
 import app.krafted.wordsearch.ui.CompleteScreen
 import app.krafted.wordsearch.ui.GameScreen
+import app.krafted.wordsearch.ui.HomeScreen
+import app.krafted.wordsearch.ui.PuzzleSelectScreen
 import app.krafted.wordsearch.ui.theme.WordSearchTheme
+import app.krafted.wordsearch.viewmodel.HomeViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +56,9 @@ fun WordSearchNavHost() {
     val context = LocalContext.current
     val repository = remember { PuzzleRepository(context) }
     val dao = remember { AppDatabase.getInstance(context).puzzleDao() }
+    val homeViewModel: HomeViewModel = viewModel(
+        factory = HomeViewModel.factory(repository, dao)
+    )
     NavHost(
         navController = navController,
         startDestination = "splash",
@@ -66,18 +73,26 @@ fun WordSearchNavHost() {
             }
         }
         composable("home") {
-            PlaceholderScreen("Home Screen") {
-                navController.navigate("puzzle_select/1")
-            }
+            HomeScreen(
+                viewModel = homeViewModel,
+                onCategorySelected = { id ->
+                    navController.navigate("puzzle_select/$id")
+                }
+            )
         }
         composable(
             route = "puzzle_select/{categoryId}",
             arguments = listOf(navArgument("categoryId") { type = NavType.IntType })
         ) { backStackEntry ->
             val categoryId = backStackEntry.arguments?.getInt("categoryId") ?: 1
-            PlaceholderScreen("Puzzle Select Category $categoryId") {
-                navController.navigate("mode_select/$categoryId/1")
-            }
+            PuzzleSelectScreen(
+                categoryId = categoryId,
+                viewModel = homeViewModel,
+                onPuzzleSelected = { cat, num ->
+                    navController.navigate("mode_select/$cat/$num")
+                },
+                onBack = { navController.popBackStack() }
+            )
         }
         composable(
             route = "mode_select/{categoryId}/{puzzleNumber}",
