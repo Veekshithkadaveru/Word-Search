@@ -134,6 +134,7 @@ fun WordSearchNavHost() {
                 isTimedMode = isTimed,
                 repository = repository,
                 dao = dao,
+                onBack = { navController.navigateUp() },
                 onComplete = { score, time, isNewBest ->
                     navController.navigate(
                         "complete/$categoryId/$puzzleNumber/$score/$time/$isNewBest"

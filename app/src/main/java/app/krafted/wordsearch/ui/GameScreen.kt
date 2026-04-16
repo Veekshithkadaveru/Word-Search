@@ -60,6 +60,7 @@ fun GameScreen(
     isTimedMode: Boolean,
     repository: PuzzleRepository,
     dao: PuzzleDao,
+    onBack: () -> Unit,
     onComplete: (score: Int, timeSeconds: Int, isNewBest: Boolean) -> Unit
 ) {
     val viewModel: GameViewModel = viewModel(factory = GameViewModel.factory(repository, dao))
@@ -67,6 +68,10 @@ fun GameScreen(
 
     LaunchedEffect(categoryId, puzzleNumber, isTimedMode) {
         viewModel.startPuzzle(categoryId, puzzleNumber, isTimedMode)
+    }
+
+    LaunchedEffect(state.isError) {
+        if (state.isError) onBack()
     }
 
     LaunchedEffect(state.isComplete) {

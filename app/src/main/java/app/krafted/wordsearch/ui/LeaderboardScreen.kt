@@ -94,11 +94,7 @@ fun LeaderboardScreen(
     var selectedIndex by remember { mutableIntStateOf(0) }
 
     LaunchedEffect(Unit) {
-        val categories = repository.getAllCategories().filter {
-            !it.name.contains("Nature", ignoreCase = true) &&
-            !it.name.contains("Space", ignoreCase = true) &&
-            !it.name.contains("Travel", ignoreCase = true)
-        }
+        val categories = repository.getAllCategories()
         val data = categories.map { category ->
             LeaderboardCategory(
                 category = category,

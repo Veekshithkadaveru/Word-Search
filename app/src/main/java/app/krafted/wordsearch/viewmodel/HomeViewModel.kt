@@ -80,7 +80,7 @@ class HomeViewModel(
     }
 
     fun loadCategory(categoryId: Int) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val category = repository.getCategory(categoryId)
             if (category == null) {
                 _puzzleSelectUiState.value = PuzzleSelectUiState(isLoading = false)

@@ -35,6 +35,7 @@ data class GameUiState(
     val timeElapsedSeconds: Int = 0,
     val jokerQuote: String = "",
     val isComplete: Boolean = false,
+    val isError: Boolean = false,
     val score: Int = 0,
     val isNewBest: Boolean = false,
     val categoryId: Int = 0,
@@ -67,7 +68,7 @@ class GameViewModel(
         val category = repository.getCategory(categoryId)
         val puzzle = repository.getPuzzle(categoryId, puzzleNumber)
         if (category == null || puzzle == null) {
-            _uiState.value = GameUiState()
+            _uiState.value = GameUiState(isError = true)
             return
         }
         val seed = (categoryId.toLong() shl 16) or puzzleNumber.toLong()
@@ -144,7 +145,7 @@ class GameViewModel(
         timerJob?.cancel()
         val state = _uiState.value
         val base = state.placedWords.size * 100
-        val timeBonus = maxOf(0, 300 - state.timeElapsedSeconds) * 10
+        val timeBonus = if (state.isTimedMode) maxOf(0, 300 - state.timeElapsedSeconds) * 10 else 0
         val multiplier = 1.0 + (state.puzzleNumber * 0.1)
         val score = ((base + timeBonus) * multiplier).toInt()
         val existing = dao.getProgress(state.categoryId, state.puzzleNumber)

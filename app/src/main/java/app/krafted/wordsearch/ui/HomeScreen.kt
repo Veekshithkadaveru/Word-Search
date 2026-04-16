@@ -145,11 +145,7 @@ fun HomeScreen(
                 CircularProgressIndicator(color = GoldMid)
             }
         } else {
-            val visibleCategories = state.categories.filter {
-                !it.name.contains("Nature", ignoreCase = true) &&
-                !it.name.contains("Space", ignoreCase = true) &&
-                !it.name.contains("Travel", ignoreCase = true)
-            }
+            val visibleCategories = state.categories
 
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2),
