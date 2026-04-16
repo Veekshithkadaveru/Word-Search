@@ -1,6 +1,8 @@
 package app.krafted.wordsearch.ui.components
 
 import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -14,11 +16,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
@@ -95,9 +99,29 @@ fun WordGrid(
                             animationSpec = tween(durationMillis = if (isFound) 150 else 100),
                             label = "cellColor"
                         )
+                        val pulseScale = remember { Animatable(1f) }
+                        LaunchedEffect(isFound) {
+                            if (isFound) {
+                                pulseScale.animateTo(
+                                    1.15f,
+                                    animationSpec = tween(durationMillis = 80)
+                                )
+                                pulseScale.animateTo(
+                                    1f,
+                                    animationSpec = spring(
+                                        dampingRatio = 0.5f,
+                                        stiffness = 500f
+                                    )
+                                )
+                            }
+                        }
                         Box(
                             modifier = Modifier
                                 .size(cellSizeDp)
+                                .graphicsLayer {
+                                    scaleX = pulseScale.value
+                                    scaleY = pulseScale.value
+                                }
                                 .background(animatedColor)
                                 .border(0.5.dp, CellBorderColor),
                             contentAlignment = Alignment.Center

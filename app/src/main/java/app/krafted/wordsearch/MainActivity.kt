@@ -7,15 +7,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -27,10 +23,12 @@ import androidx.navigation.navArgument
 import app.krafted.wordsearch.data.PuzzleRepository
 import app.krafted.wordsearch.data.db.AppDatabase
 import app.krafted.wordsearch.ui.CompleteScreen
+import app.krafted.wordsearch.ui.LeaderboardScreen
 import app.krafted.wordsearch.ui.GameScreen
 import app.krafted.wordsearch.ui.HomeScreen
 import app.krafted.wordsearch.ui.ModeSelectScreen
 import app.krafted.wordsearch.ui.PuzzleSelectScreen
+import app.krafted.wordsearch.ui.SplashScreen
 import app.krafted.wordsearch.ui.theme.WordSearchTheme
 import app.krafted.wordsearch.viewmodel.HomeViewModel
 
@@ -67,17 +65,22 @@ fun WordSearchNavHost() {
         exitTransition = { fadeOut(animationSpec = tween(300)) }
     ) {
         composable("splash") {
-            PlaceholderScreen("Splash Screen") {
-                navController.navigate("home") {
-                    popUpTo("splash") { inclusive = true }
+            SplashScreen(
+                onFinished = {
+                    navController.navigate("home") {
+                        popUpTo("splash") { inclusive = true }
+                    }
                 }
-            }
+            )
         }
         composable("home") {
             HomeScreen(
                 viewModel = homeViewModel,
                 onCategorySelected = { id ->
                     navController.navigate("puzzle_select/$id")
+                },
+                onLeaderboardTap = {
+                    navController.navigate("leaderboard")
                 }
             )
         }
@@ -162,6 +165,7 @@ fun WordSearchNavHost() {
                 timeSeconds = time,
                 isNewBest = isNewBest,
                 repository = repository,
+                dao = dao,
                 onNextPuzzle = {
                     navController.navigate("mode_select/$categoryId/${puzzleNumber + 1}") {
                         popUpTo("home")
@@ -175,21 +179,12 @@ fun WordSearchNavHost() {
             )
         }
         composable("leaderboard") {
-            PlaceholderScreen("Leaderboard") {
-                navController.popBackStack()
-            }
+            LeaderboardScreen(
+                repository = repository,
+                dao = dao,
+                onBack = { navController.popBackStack() }
+            )
         }
     }
 }
 
-@Composable
-fun PlaceholderScreen(name: String, onClick: () -> Unit) {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .clickable { onClick() },
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = name, style = MaterialTheme.typography.headlineLarge)
-    }
-}

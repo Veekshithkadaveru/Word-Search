@@ -56,10 +56,20 @@ interface PuzzleDao {
             progress.copy(
                 bestTimeSeconds = mergedBestTime,
                 bestScore = maxOf(existing.bestScore, progress.bestScore),
-                completedAt = progress.completedAt
+                completedAt = progress.completedAt,
+                playerName = existing.playerName.ifBlank { progress.playerName }
             )
         )
     }
+
+    @Query(
+        """
+        UPDATE puzzle_progress
+        SET playerName = :playerName
+        WHERE categoryId = :categoryId AND puzzleNumber = :puzzleNumber
+        """
+    )
+    suspend fun updatePlayerName(categoryId: Int, puzzleNumber: Int, playerName: String)
 
     @Transaction
     suspend fun isPuzzleUnlocked(categoryId: Int, puzzleNumber: Int): Boolean {

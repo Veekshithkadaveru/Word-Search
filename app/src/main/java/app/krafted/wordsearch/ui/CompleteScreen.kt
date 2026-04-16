@@ -17,6 +17,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -33,6 +34,7 @@ import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -44,6 +46,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -55,13 +58,18 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.TextFieldValue
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.krafted.wordsearch.data.PuzzleRepository
 import app.krafted.wordsearch.data.QuoteEvent
+import app.krafted.wordsearch.data.db.PuzzleDao
 import app.krafted.wordsearch.ui.components.JokerReaction
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 private val SurfaceDark = Color(0xFF0A0A0A)
 private val PanelElevated = Color(0xFF141414)
@@ -87,6 +95,7 @@ fun CompleteScreen(
     timeSeconds: Int,
     isNewBest: Boolean,
     repository: PuzzleRepository,
+    dao: PuzzleDao,
     onNextPuzzle: () -> Unit,
     onHome: () -> Unit
 ) {
@@ -110,6 +119,10 @@ fun CompleteScreen(
         if (name.isBlank()) 0
         else context.resources.getIdentifier(name, "drawable", context.packageName)
     }
+
+    var playerName by remember { mutableStateOf(TextFieldValue("")) }
+    var nameSaved by remember { mutableStateOf(false) }
+    val scope = rememberCoroutineScope()
 
     var appeared by remember { mutableStateOf(false) }
     var quoteVisible by remember { mutableStateOf(false) }
@@ -233,7 +246,7 @@ fun CompleteScreen(
                 .padding(horizontal = 22.dp, vertical = 14.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(4.dp))
 
             HeroSymbol(
                 symbolResId = symbolResId,
@@ -242,17 +255,17 @@ fun CompleteScreen(
                 alphaProgress = heroAlpha
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(2.dp))
 
             Text(
                 text = "PUZZLE COMPLETE",
                 color = GoldLight,
                 fontWeight = FontWeight.Black,
-                style = MaterialTheme.typography.headlineMedium,
-                letterSpacing = 5.sp,
+                style = MaterialTheme.typography.titleLarge,
+                letterSpacing = 3.sp,
                 modifier = Modifier.staggerEntry(labelProgress, 14f)
             )
-            Spacer(modifier = Modifier.height(6.dp))
+            Spacer(modifier = Modifier.height(2.dp))
             Text(
                 text = "${category?.name.orEmpty()}  \u00B7  Puzzle $puzzleNumber of $LAST_PUZZLE_NUMBER",
                 color = TextMuted,
@@ -262,9 +275,9 @@ fun CompleteScreen(
                 modifier = Modifier.staggerEntry(subtitleProgress, 12f)
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(2.dp))
             OrnateDivider(progress = dividerProgress)
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(2.dp))
 
             StatsCard(
                 timeSeconds = timeSeconds,
@@ -273,11 +286,29 @@ fun CompleteScreen(
             )
 
             if (isNewBest) {
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(4.dp))
                 NewBestBadge(entryProgress = newBestProgress)
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(2.dp))
+
+            NameEntryCard(
+                playerName = playerName,
+                onNameChange = { playerName = it },
+                nameSaved = nameSaved,
+                onSave = {
+                    val name = playerName.text.trim()
+                    if (name.isNotEmpty()) {
+                        scope.launch {
+                            dao.updatePlayerName(categoryId, puzzleNumber, name)
+                            nameSaved = true
+                        }
+                    }
+                },
+                modifier = Modifier.staggerEntry(quoteProgress, 20f)
+            )
+
+            Spacer(modifier = Modifier.height(2.dp))
 
             JokerReaction(
                 quote = if (quoteVisible) quote else "",
@@ -296,6 +327,133 @@ fun CompleteScreen(
             )
 
             Spacer(modifier = Modifier.height(8.dp))
+        }
+    }
+}
+
+@Composable
+private fun NameEntryCard(
+    playerName: TextFieldValue,
+    onNameChange: (TextFieldValue) -> Unit,
+    nameSaved: Boolean,
+    onSave: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val shape = RoundedCornerShape(18.dp)
+
+    Box(
+        modifier = modifier
+            .fillMaxWidth()
+            .clip(shape)
+            .background(
+                Brush.verticalGradient(
+                    listOf(
+                        Color(0xFF181410),
+                        PanelElevated,
+                        PanelDeep
+                    )
+                )
+            )
+            .border(
+                width = 1.dp,
+                brush = Brush.verticalGradient(
+                    listOf(
+                        GoldLight.copy(alpha = 0.5f),
+                        GoldMid.copy(alpha = 0.25f),
+                        GoldDark.copy(alpha = 0.15f)
+                    )
+                ),
+                shape = shape
+            )
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 10.dp)
+        ) {
+            Text(
+                text = "ENTER YOUR NAME",
+                color = GoldLight,
+                fontSize = 10.sp,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 2.8.sp
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(40.dp)
+                        .clip(RoundedCornerShape(12.dp))
+                        .background(Color.White.copy(alpha = 0.06f))
+                        .border(
+                            1.dp,
+                            if (nameSaved) GoldMid.copy(alpha = 0.5f) else Color.White.copy(alpha = 0.12f),
+                            RoundedCornerShape(12.dp)
+                        )
+                        .padding(horizontal = 16.dp),
+                    contentAlignment = Alignment.CenterStart
+                ) {
+                    if (playerName.text.isEmpty() && !nameSaved) {
+                        Text(
+                            text = "Your name...",
+                            color = Color.White.copy(alpha = 0.28f),
+                            fontSize = 15.sp,
+                            fontWeight = FontWeight.Medium
+                        )
+                    }
+                    BasicTextField(
+                        value = playerName,
+                        onValueChange = { if (!nameSaved && it.text.length <= 20) onNameChange(it) },
+                        enabled = !nameSaved,
+                        singleLine = true,
+                        textStyle = TextStyle(
+                            color = Color.White,
+                            fontSize = 15.sp,
+                            fontWeight = FontWeight.SemiBold
+                        ),
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+
+                val saveShape = RoundedCornerShape(12.dp)
+                Button(
+                    onClick = onSave,
+                    enabled = playerName.text.trim().isNotEmpty() && !nameSaved,
+                    shape = saveShape,
+                    contentPadding = PaddingValues(0.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color.Transparent,
+                        disabledContainerColor = Color.Transparent
+                    ),
+                    modifier = Modifier
+                        .height(40.dp)
+                        .background(
+                            brush = if (playerName.text.trim().isNotEmpty() && !nameSaved) {
+                                Brush.verticalGradient(listOf(GoldLight, GoldMid, GoldDark))
+                            } else {
+                                Brush.verticalGradient(
+                                    listOf(GoldMid.copy(alpha = 0.25f), GoldDark.copy(alpha = 0.15f))
+                                )
+                            },
+                            shape = saveShape
+                        )
+                ) {
+                    Text(
+                        text = if (nameSaved) "SAVED" else "SAVE",
+                        color = if (playerName.text.trim().isNotEmpty() && !nameSaved) GoldInkText
+                        else GoldInkText.copy(alpha = 0.4f),
+                        fontWeight = FontWeight.Black,
+                        fontSize = 12.sp,
+                        letterSpacing = 1.8.sp,
+                        modifier = Modifier.padding(horizontal = 16.dp)
+                    )
+                }
+            }
         }
     }
 }
@@ -357,7 +515,7 @@ private fun HeroSymbol(
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
-            .size(152.dp)
+            .size(96.dp)
             .graphicsLayer {
                 scaleX = scale * breath
                 scaleY = scale * breath
@@ -367,7 +525,7 @@ private fun HeroSymbol(
     ) {
         Box(
             modifier = Modifier
-                .size(152.dp)
+                .size(96.dp)
                 .background(
                     brush = Brush.radialGradient(
                         colors = listOf(
@@ -381,7 +539,7 @@ private fun HeroSymbol(
         )
         Box(
             modifier = Modifier
-                .size(132.dp)
+                .size(82.dp)
                 .rotate(ringRotation)
                 .border(
                     width = 1.5.dp,
@@ -399,7 +557,7 @@ private fun HeroSymbol(
         )
         Box(
             modifier = Modifier
-                .size(116.dp)
+                .size(70.dp)
                 .rotate(innerRingRotation)
                 .border(
                     width = 1.dp,
@@ -424,7 +582,7 @@ private fun HeroSymbol(
                     listOf(GoldLight, GoldMid, GoldDark)
                 )
             ),
-            modifier = Modifier.size(100.dp)
+            modifier = Modifier.size(58.dp)
         ) {
             Box(
                 contentAlignment = Alignment.Center,
@@ -444,13 +602,13 @@ private fun HeroSymbol(
                         painter = painterResource(id = symbolResId),
                         contentDescription = null,
                         contentScale = ContentScale.Fit,
-                        modifier = Modifier.padding(18.dp)
+                        modifier = Modifier.padding(10.dp)
                     )
                 } else {
                     Text(
                         text = "\u2605",
                         color = accentColor,
-                        fontSize = 42.sp,
+                        fontSize = 28.sp,
                         fontWeight = FontWeight.Black
                     )
                 }
@@ -558,7 +716,7 @@ private fun StatsCard(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 24.dp, vertical = 24.dp)
+                .padding(horizontal = 16.dp, vertical = 12.dp)
         ) {
             Text(
                 text = "FINAL SCORE",
@@ -567,15 +725,15 @@ private fun StatsCard(
                 fontWeight = FontWeight.Bold,
                 letterSpacing = 3.5.sp
             )
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = "%,d".format(scoreDisplay),
                 color = Color.White,
-                fontSize = 52.sp,
+                fontSize = 36.sp,
                 fontWeight = FontWeight.Black,
                 letterSpacing = 1.sp
             )
-            Spacer(modifier = Modifier.height(18.dp))
+            Spacer(modifier = Modifier.height(8.dp))
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -590,7 +748,7 @@ private fun StatsCard(
                         )
                     )
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(2.dp))
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
@@ -814,7 +972,7 @@ private fun PrimaryActionButton(
             containerColor = Color.Transparent,
             disabledContainerColor = Color.Transparent
         ),
-        modifier = modifier.height(56.dp)
+        modifier = modifier.height(46.dp)
     ) {
         Box(
             modifier = Modifier
@@ -897,7 +1055,7 @@ private fun SecondaryActionButton(
             contentColor = Color.White,
             containerColor = Color.Transparent
         ),
-        modifier = modifier.height(56.dp)
+        modifier = modifier.height(46.dp)
     ) {
         Box(
             modifier = Modifier

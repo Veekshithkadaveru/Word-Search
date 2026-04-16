@@ -11,5 +11,6 @@ data class PuzzleProgress(
     val puzzleNumber: Int,
     val bestTimeSeconds: Int,
     val bestScore: Int,
-    val completedAt: Long = System.currentTimeMillis()
+    val completedAt: Long = System.currentTimeMillis(),
+    val playerName: String = ""
 )

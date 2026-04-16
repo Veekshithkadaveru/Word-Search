@@ -80,7 +80,8 @@ private val GoldGlint = Color(0xFFFFF8E1)
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel,
-    onCategorySelected: (categoryId: Int) -> Unit
+    onCategorySelected: (categoryId: Int) -> Unit,
+    onLeaderboardTap: () -> Unit = {}
 ) {
     val state by viewModel.homeUiState.collectAsState()
 
@@ -123,8 +124,7 @@ fun HomeScreen(
                     )
                 )
         )
-        
-        // Deep rich central glow
+
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -167,7 +167,11 @@ fun HomeScreen(
                 verticalArrangement = Arrangement.spacedBy(18.dp)
             ) {
                 item(span = { GridItemSpan(maxLineSpan) }) {
-                    HomeHeader(appeared = appeared, infiniteTransition = infiniteTransition)
+                    HomeHeader(
+                        appeared = appeared,
+                        infiniteTransition = infiniteTransition,
+                        onLeaderboardTap = onLeaderboardTap
+                    )
                 }
                 itemsIndexed(visibleCategories, key = { _, cat -> cat.categoryId }) { index, category ->
                     val delayMs = 150 + (index * 120)
@@ -185,7 +189,11 @@ fun HomeScreen(
 }
 
 @Composable
-private fun HomeHeader(appeared: Boolean, infiniteTransition: androidx.compose.animation.core.InfiniteTransition) {
+private fun HomeHeader(
+    appeared: Boolean,
+    infiniteTransition: androidx.compose.animation.core.InfiniteTransition,
+    onLeaderboardTap: () -> Unit
+) {
     val alphaAnim by animateFloatAsState(
         targetValue = if (appeared) 1f else 0f,
         animationSpec = tween(durationMillis = 800, easing = FastOutSlowInEasing),
@@ -208,6 +216,36 @@ private fun HomeHeader(appeared: Boolean, infiniteTransition: androidx.compose.a
             },
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Box(modifier = Modifier.fillMaxWidth()) {
+            Box(modifier = Modifier.align(Alignment.TopEnd)) {
+                Surface(
+                    shape = CircleShape,
+                    color = PanelElevated,
+                    border = BorderStroke(1.dp, GoldMid.copy(alpha = 0.4f)),
+                    modifier = Modifier
+                        .size(40.dp)
+                        .clip(CircleShape)
+                        .clickable { onLeaderboardTap() }
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(
+                                Brush.verticalGradient(
+                                    listOf(Color.White.copy(alpha = 0.1f), Color.Transparent)
+                                )
+                            ),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = "\uD83C\uDFC6",
+                            fontSize = 18.sp
+                        )
+                    }
+                }
+            }
+        }
+
         HeroArtSymbol(infiniteTransition = infiniteTransition)
 
         Spacer(modifier = Modifier.height(26.dp))
@@ -325,7 +363,6 @@ private fun HeroArtSymbol(infiniteTransition: androidx.compose.animation.core.In
                 scaleY = breath
             }
     ) {
-        // Outer glowing halo
         Box(
             modifier = Modifier
                 .size(heroSize + 30.dp)
@@ -340,7 +377,6 @@ private fun HeroArtSymbol(infiniteTransition: androidx.compose.animation.core.In
                     shape = CircleShape
                 )
         )
-        // Outer spinning orbital ring
         Box(
             modifier = Modifier
                 .size(heroSize + 16.dp)
@@ -359,7 +395,6 @@ private fun HeroArtSymbol(infiniteTransition: androidx.compose.animation.core.In
                     shape = CircleShape
                 )
         )
-        // Inner reverse spinning ring
         Box(
             modifier = Modifier
                 .size(heroSize + 4.dp)
@@ -378,7 +413,6 @@ private fun HeroArtSymbol(infiniteTransition: androidx.compose.animation.core.In
                     shape = CircleShape
                 )
         )
-        // Main Image Frame
         Surface(
             shape = CircleShape,
             color = PanelElevated,
@@ -397,7 +431,6 @@ private fun HeroArtSymbol(infiniteTransition: androidx.compose.animation.core.In
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()
                 )
-                // Inner gloss
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
@@ -497,7 +530,7 @@ private fun CategoryCard(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .aspectRatio(0.80f) // Slightly taller to fit 2 text lines beautifully
+            .aspectRatio(0.80f)
             .clip(shape)
             .clickable { onClick() }
             .background(
@@ -521,7 +554,6 @@ private fun CategoryCard(
                 shape = shape
             )
     ) {
-        // Deep background glow within the card 
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -549,7 +581,6 @@ private fun CategoryCard(
             )
         }
 
-        // Top accent line glow
         Box(
             modifier = Modifier
                 .fillMaxWidth()

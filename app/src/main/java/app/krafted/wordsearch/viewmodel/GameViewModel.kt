@@ -24,7 +24,7 @@ import kotlinx.coroutines.launch
 
 private const val GRID_SIZE = 12
 private const val TIMER_WARNING_SECONDS = 30
-private const val WRONG_FLASH_MS = 300L
+private const val WRONG_FLASH_MS = 200L
 
 data class GameUiState(
     val grid: Array<CharArray> = Array(GRID_SIZE) { CharArray(GRID_SIZE) { ' ' } },
