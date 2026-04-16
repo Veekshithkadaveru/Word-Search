@@ -29,6 +29,7 @@ import app.krafted.wordsearch.data.db.AppDatabase
 import app.krafted.wordsearch.ui.CompleteScreen
 import app.krafted.wordsearch.ui.GameScreen
 import app.krafted.wordsearch.ui.HomeScreen
+import app.krafted.wordsearch.ui.ModeSelectScreen
 import app.krafted.wordsearch.ui.PuzzleSelectScreen
 import app.krafted.wordsearch.ui.theme.WordSearchTheme
 import app.krafted.wordsearch.viewmodel.HomeViewModel
@@ -103,9 +104,15 @@ fun WordSearchNavHost() {
         ) { backStackEntry ->
             val categoryId = backStackEntry.arguments?.getInt("categoryId") ?: 1
             val puzzleNumber = backStackEntry.arguments?.getInt("puzzleNumber") ?: 1
-            PlaceholderScreen("Mode Select $categoryId - $puzzleNumber") {
-                navController.navigate("game/$categoryId/$puzzleNumber/true")
-            }
+            ModeSelectScreen(
+                categoryId = categoryId,
+                puzzleNumber = puzzleNumber,
+                repository = repository,
+                onBack = { navController.popBackStack() },
+                onStartGame = { isTimed ->
+                    navController.navigate("game/$categoryId/$puzzleNumber/$isTimed")
+                }
+            )
         }
         composable(
             route = "game/{categoryId}/{puzzleNumber}/{isTimed}",
